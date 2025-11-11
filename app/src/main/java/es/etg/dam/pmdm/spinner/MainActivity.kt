@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.GridView
 import android.widget.ListView
 import android.widget.Spinner
 import android.widget.Toast
@@ -33,6 +34,17 @@ class MainActivity : AppCompatActivity() {
         val lv: ListView = findViewById(R.id.listView)
         lv.adapter = getAdapter()
         lv.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                Toast.makeText(view?.context, "Seleccionado $position", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // Parte de GridView
+        val gv: GridView = findViewById(R.id.gridView)
+        gv.adapter = getAdapter()
+        gv.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
