@@ -34,4 +34,10 @@ class MainActivity : AppCompatActivity() {
             android.R.layout.simple_spinner_item)
         return adapter;
     }
+
+//    fun getAdapter(): ArrayAdapter<String> {
+//        val ciudades = arrayOf("Parla", "Barcelona", "Madrid")
+//        val adapter = ArrayAdapter(this,android.R.layout.simple_spinner_item,ciudades)
+//        return adapter;
+//    }
 }
